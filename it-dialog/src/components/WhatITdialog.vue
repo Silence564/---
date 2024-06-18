@@ -2,22 +2,22 @@
     <div class="frame66">
       <div class="text2">Что такое ИТ Диалог</div>
       <div class="frame65">
-        <div class="ItemAbout" style="max-width: 392px;width:100%;height: 240px; padding: 20px; background: #F5F8FC; border-radius: 20px; overflow: hidden; flex-direction: column; justify-content: space-between; align-items: flex-start; display: inline-flex">
-          <div style="color: #1D2329; font-size: 28px; font-weight: 600; line-height: 30.24px; word-wrap: break-word">Мероприятия</div>
+        <div class="ItemAbout">
+          <div class="text3">Мероприятия</div>
           <div class="block1">
             <div class="block-button"><button class="button1">Узнать больше</button></div>
             <img class="Ellipse4" src="../../public/image/Ellipse4.png" />
           </div>  
         </div>
-        <div class="ItemAbout" style="max-width: 392px;width:100%; height: 240px; padding: 20px; background: #F5F8FC; border-radius: 20px; overflow: hidden; flex-direction: column; justify-content: space-between; align-items: flex-start; display: inline-flex">
-          <div style="color: #1D2329; font-size: 28px; font-weight: 600; line-height: 30.24px; word-wrap: break-word">Экспертный клуб</div>
+        <div class="ItemAbout">
+          <div class="text3">Экспертный клуб</div>
           <div class="block1">
             <router-link to="/page_club"><div class="block-button"><button class="button1">Узнать больше</button></div></router-link>
             <img class="Ellipse4" src="../../public/image/Ellipse2.png" />
           </div>  
         </div>
-        <div class="ItemAbout" style="max-width: 392px;width:100%; height: 240px; padding: 20px; background: #F5F8FC; border-radius: 20px; overflow: hidden; flex-direction: column; justify-content: space-between; align-items: flex-start; display: inline-flex">
-          <div style="color: #1D2329; font-size: 28px; font-weight: 600; line-height: 30.24px; word-wrap: break-word">Медиапроект</div>
+        <div class="ItemAbout">
+          <div class="text3">Медиапроект</div>
           <div class="block1">
             <div class="block-button"><button class="button1">Узнать больше</button></div>
             <img class="Ellipse4" src="../../public/image/Ellipse3.png" />
@@ -35,7 +35,7 @@ name: 'What-it-dialog'
 .frame66{
   max-width: 1440px; 
   width: 100%;
-  height: 435px; 
+  height: 100%; 
   padding-left: 108px; 
   padding-right: 108px; 
   padding-top: 56px; 
@@ -56,14 +56,36 @@ name: 'What-it-dialog'
   word-wrap: break-word;
 }
 
+.text3{
+  color: #1D2329; 
+  font-size: 2.2vw; 
+  font-weight: 600; 
+  line-height: 30.24px; 
+  word-wrap: break-word;
+}
+
 .frame65{
   max-width: 1224px; 
   width: 100%;
-  height: 240px; 
+  height: 100%; 
   justify-content: flex-start; 
   align-items: flex-start; 
-  gap: 24px; 
+  gap: 20px; 
   display: inline-flex;
+  flex-wrap: wrap;
+}
+
+.ItemAbout{
+  width: 32%;
+  height: 100%; 
+  padding: 20px; 
+  background: #F5F8FC; 
+  border-radius: 20px; 
+  flex-direction: column; 
+  justify-content: space-between; 
+  align-items: flex-start; 
+  display: inline-flex;
+  overflow: hidden;
 }
 
 .button1{
@@ -83,17 +105,18 @@ name: 'What-it-dialog'
   color: #1D2329;
   white-space: nowrap;
   cursor:pointer;
-}
 
-.button1:hover{
+  &:hover{
   border: none;  
   background: #2B71C2; 
   color: white; 
+}
 }
 
 .block1{
   display: inline-flex;
   flex-direction: row;
+  
 }
 
 .block-button{
@@ -101,10 +124,5 @@ name: 'What-it-dialog'
   padding-right: 0.9vw;
 }
 
-.Ellipse4{
-  padding-top: 3vw;
-  height: auto;
-  
-  width: 50%;
-}
+.Ellipse4{ padding-top: 3vw; height: auto; width: 50%;}
 </style>

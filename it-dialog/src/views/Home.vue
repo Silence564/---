@@ -12,12 +12,15 @@
         </div>
       </div> 
       <div class="Frame63">
-        <div class="Polygon1" style="width: 12px; height: 24px; border: 2px white solid"></div>
         <button class="button">Подробнее</button>
-        <div class="Polygon1" style="width: 24px; height: 12px; transform: rotate(90deg); transform-origin: 0 0; border: 2px white solid"></div>
       </div>
     </div>
     <whatitdialog/>
+    <faceclub/>
+    <calendare/>
+    <publication/>
+    <partners/>
+    <connectionblock/>
     <footer>
       <div class="Frame54">
         <div><img src="../../public/image/svg/Logo.svg"></div>
@@ -33,10 +36,10 @@
           <img src="../../public/image/svg/Wa.svg"/>
         </div>
         <div class="Frame77">
-        <div class="79217404984" style="text-align: right; color: white; font-size: 20px; font-family: Wix Madefor Display; font-weight: 600; line-height: 24px; word-wrap: break-word">+7 921 740-49-84</div>
-          <div class="Frame53" style="flex-direction: column; justify-content: flex-start; align-items: flex-end; gap: 8px; display: flex">
-            <div class="InfoItdialogInfo" style="text-align: right; color: white; font-size: 16px; font-weight: 400; line-height: 22.40px; word-wrap: break-word">info@itdialog.info</div>
-            <div class="AntonPPrFactorRu" style="text-align: right; color: white; font-size: 16px; font-weight: 400; line-height: 22.40px; word-wrap: break-word">anton.p@pr-factor.ru</div>
+        <div class="number">+7 921 740-49-84</div>
+          <div class="Frame53">
+            <div class="Info">info@itdialog.info</div>
+            <div class="Info">anton.p@pr-factor.ru</div>
           </div>
         </div>
       </div>
@@ -45,11 +48,21 @@
 </template>
 <script>
 import whatitdialog from '../components/WhatITdialog';
+import connectionblock from '../components/Connection.vue';
+import partners from '../components/Partners.vue';
+import faceclub from '../components/FaceClub.vue';
+import calendare from '../components/Calendare.vue';
+import publication from '../components/Publication.vue';
 
 export default {
   name: 'Home-page',
   components: {
     whatitdialog,
+    connectionblock,
+    partners,
+    faceclub,
+    calendare,
+    publication,
   },
 }
 </script>
@@ -57,29 +70,35 @@ export default {
 $weit400: 400;
 $weit600: 600;
 $fullpr: 100%;
+$wrap: break-word;
+$f-s: flex-start;
 
 .Homepage{
-  max-width: 1440px; 
-  width: $fullpr;
+  max-width: $fullpr; 
+  width: 1440px;
   background-color: white;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: $f-s;
+  align-items: $f-s;
   gap: 1px;
   display: inline-flex;
 }
 
+.Frame53{
+  flex-direction: column; justify-content: $f-s; align-items: flex-end; gap: 8px; display: flex;
+}
+
 .Frame54{
   flex-direction: column; 
-  justify-content: flex-start; 
-  align-items: flex-start; 
+  justify-content: $f-s; 
+  align-items: $f-s; 
   gap: 40px; 
   display: inline-flex;
 }
 
 .Frame55{
   flex-direction: column; 
-  justify-content: flex-start; 
+  justify-content: $f-s; 
   align-items: flex-end; 
   gap: 28px; 
   display: inline-flex;
@@ -87,15 +106,15 @@ $fullpr: 100%;
 
 .Frame58{
   flex-direction: column; 
-  justify-content: flex-start; 
-  align-items: flex-start; 
+  justify-content: $f-s; 
+  align-items: $f-s; 
   gap: 16px; 
   display: flex;
 }
 
 .Frame61{
   flex-direction: column; 
-  justify-content: flex-start; 
+  justify-content: $f-s; 
   align-items: center; 
   gap: 16px; 
   display: flex;
@@ -128,7 +147,7 @@ $fullpr: 100%;
 }
 
 .Frame77{
-  flex-direction: column; justify-content: flex-start; align-items: flex-end; gap: 16px; display: flex;
+  flex-direction: column; justify-content: $f-s; align-items: flex-end; gap: 16px; display: flex;
 }
 
 .logo{
@@ -149,12 +168,13 @@ $fullpr: 100%;
   font-size: 56px;  
   font-weight: 700; 
   line-height: 60.48px; 
-  word-wrap: break-word;
+  word-wrap: $wrap;
   padding-top: 2vw;
 }
 
 .button{
-  width: 151px; 
+  margin: 0 auto;
+  width: 13.3%; 
   height: 56px;
   padding-left: 28px; 
   padding-right: 28px; 
@@ -166,7 +186,7 @@ $fullpr: 100%;
   font-weight: $weit600; 
   line-height: 16px; 
   letter-spacing: 0.32px; 
-  word-wrap: break-word;
+  word-wrap: $wrap;
   border: none; 
   cursor: pointer;
 
@@ -182,7 +202,7 @@ $fullpr: 100%;
   font-size: 16px;  
   font-weight: $weit600; 
   line-height: 19.20px; 
-  word-wrap: break-word;
+  word-wrap: $wrap;
 }
 
 .adres{
@@ -191,7 +211,7 @@ $fullpr: 100%;
   font-size: 16px;  
   font-weight: $weit400; 
   line-height: 22.40px; 
-  word-wrap: break-word;
+  word-wrap: $wrap;
 }
 
 
@@ -205,19 +225,27 @@ footer{
   padding-bottom: 58px; 
   background: #1D2329;
   justify-content: space-between; 
-  align-items: flex-start; 
+  align-items: $f-s; 
   display: inline-flex;
 }
 
 .text2023{
-  color: white; font-size: 16px; font-weight: $weit400; line-height: 22.40px; word-wrap: break-word;
+  color: white; font-size: 16px; font-weight: $weit400; line-height: 22.40px; word-wrap: $wrap;
 }
 
 .text33a2{
-  color: white; font-size: 16px; font-weight: $weit400; line-height: 22.40px; word-wrap: break-word;
+  color: white; font-size: 16px; font-weight: $weit400; line-height: 22.40px; word-wrap: $wrap;
 }
 
 .Social{
-  justify-content: flex-end; align-items: flex-start; gap: 16px; display: inline-flex;
+  justify-content: flex-end; align-items: $f-s; gap: 16px; display: inline-flex;
+}
+
+.number{
+  text-align: right; color: white; font-size: 20px; font-weight: $weit600; line-height: 24px; word-wrap: $wrap;
+}
+
+.Info{
+  text-align: right; color: white; font-size: 16px; font-weight: $weit400; line-height: 22.40px; word-wrap: $wrap;
 }
 </style>
